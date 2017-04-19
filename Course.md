@@ -7,6 +7,8 @@
 
 # What you'll learn from this course
 
+---
+
 - What is [Cloud Foundry](https://www.cloudfoundry.org/)
 - What are [Pivotal Cloud Foundry](https://pivotal.io/platform) and [Pivotal Web Services](http://run.pivotal.io/)
 - How to develop your app as [Cloud-native application](12factor.net)
@@ -17,6 +19,8 @@
 ---
 
 # Why would I learn CF?
+
+---
 
 - Reportedly, some of the giants in IT industry actively use it in massive-scale production load, e.g. [Baidu](https://www.wired.com/2013/07/cloudfoundry/) and IBM Bluemix.
 - Our enterprise clients(Like ~~XXX~~, ~~XXX~~) use it.
@@ -60,4 +64,26 @@ I want to use [Rancher](http://rancher.com/)!
 
 ---
 
-# 
+## Cloud Foundry Facts
+
+- Initial release: 2011
+- 
+
+---
+
+## Cloud Foundry Architecture
+
+---
+
+## Difference between CF, PCF and PWS
+
+---
+
+# Workshop #2
+
+---
+
+# Cloud Foundry's HA architecture
+
+## 4 levels of HA in CF
+

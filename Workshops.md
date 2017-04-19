@@ -33,20 +33,19 @@
 
 ---
 
-## Workshop #1 main steps:
+## Workshop #1 tasks:
 
-1. Login from CLI: `cf login -a api.run.pivotal.io`
-2. `cd workshop-material/demo-apps/node`
-3. `cf push node-sample-app --random-route -m 128M`
-4. open the app's URL in browser and see if it works
-5. repeat the same steps for `python`/`spring-music` in `demo-apps` folder
+1. Login to CF, and deploy `node` and `spring-music` example apps to CF.
+    Example apps can be found in `./workshop-material/demo-apps`
+2. Open these apps in browser to see if they work
 
 ---
 
 ## Workshop #1 questions:
 
 1. How does CF support multiple languages? Can you extend it to support more languages/custom runtimes? (Reference: https://docs.cloudfoundry.org/buildpacks/)
-2. Run `cf target` from your terminal, and explains what each item(`API endpoint`, `User`, `Org`, `Space`) means.
+2. Can you push your java source code directly to CF, and let CF build & compile & run it?
+3. Run `cf target` from your terminal, and explains what each item(`API endpoint`, `User`, `Org`, `Space`) means.
 
 ---
 
@@ -60,6 +59,30 @@ You can also run `cf apps` to see all your apps in your targeted space.
 
 ---
 
-# Workshop #3: From source code to PaaS cloud
+# Workshop #2: Manifest & Logging
 
 ---
+
+## Workshop #2 tasks:
+
+1. Now you're familiar with `cf push` to deploy apps, you're required to deploy `articulate` application in the `demo-apps` directory, give it `512MB` memory and `random-route`. 
+2. Observe `articulate` application's `logs` and `events` using CLI.
+3. Don't delete the app yet as we need it for next workshop.
+
+---
+
+## Workshop #2 questions:
+
+1. Where should your application write logs? Hint: see [here](https://12factor.net/logs)
+2. What are some of the different origin codes seen in the log? (e.g. `API`, `STG`, `CELL`, `APP`, `RTR`). Please explain what each code means. For reference see [here](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html)
+3. How does this change how you access logs today? At scale?
+
+---
+
+# Workshop #3: Scaling & High Availablity
+
+---
+
+## Workshop #3 tasks:
+
+1.

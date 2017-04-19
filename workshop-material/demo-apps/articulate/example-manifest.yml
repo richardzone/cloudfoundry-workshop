@@ -1,0 +1,6 @@
+---
+applications:
+- name: articulate
+  memory: 512M
+  random-route: true
+  path: ./articulate-0.0.1-SNAPSHOT.jar
