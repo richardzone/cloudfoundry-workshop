@@ -54,10 +54,38 @@
     ```
 3. Observe log output.
 4. Scale `articulate` back to original settings.
-    ```
+    ```sh
     $ cf scale articulate -m 512M
     ```
     
 ---
 
 ## Workshop #3 main steps for Horizontally Scale:
+
+1. Browse to the `Scale and HA` page of the `articulate` application. Review the `Application Environment Information`.
+2. Press the `Refresh` button multiple times. All requests are going to one application instance.
+3. Start tailing the logs: 
+    ```sh
+    $ cf logs articulate | grep 'API\|CELL'
+    ```
+4. Open another terminal and scale the application to 3 instances:
+    ```sh
+    cf scale articulate -i 3
+    ```
+5. Observe log output. Then stop tailing the logs.
+6. Return to `articulate` in a web browser. Press the `Refresh` button several times. Observe the `Addresses` and `Instance Index` changing.
+
+---
+
+## Workshop #3 main steps for HA:
+
+1. At this time you should be running multiple instances of `articulate`. Confirm this with the following command:
+    ```
+    $ cf app articulate
+    ```
+2. Return to `articulate` in browser and navigate to `Scale and HA` page. Press the `Refresh` button. Confirm the application is running.
+3. Kill the app. Press the `Kill` button!
+4. `cf app articulate` to check app state.
+5. `Refresh` the page to see if app is back up.
+6. `cf events articulate` to see which app instance was killed.
+7. `cf scale articulate -i 1` to scale app back to original settings.
