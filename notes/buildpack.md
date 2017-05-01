@@ -102,7 +102,7 @@ The packager will add (almost) everything in your buildpack directory into a zip
 
 In cached mode, the packager will download and add dependencies as described in the manifest.
 
-**manifest.yml format:**
+**manifest.yml for Buildpack Packager:**
 [https://github.com/cloudfoundry/buildpack-packager](https://github.com/cloudfoundry/buildpack-packager)
 
 
@@ -111,7 +111,3 @@ In cached mode, the packager will download and add dependencies as described in 
 
 ## Packaging Dependencies for Offline Buildpacks
 [https://docs.cloudfoundry.org/buildpacks/depend-pkg-offline.html](https://docs.cloudfoundry.org/buildpacks/depend-pkg-offline.html)
-
-
-
-
