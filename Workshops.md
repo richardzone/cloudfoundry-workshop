@@ -13,7 +13,7 @@
     Look for `urls: spring-music-XXX-XXX.cfapps.io` in `cf push` command output, then open that URL in your browser.
 4. Delete the app to save your money:
     ```
-    cf delete -fr spring-music
+    cf delete -r spring-music
     ```
 5. All done!
 
@@ -120,3 +120,67 @@ You can also run `cf apps` to see all your apps in your targeted space.
 4. How could you determine if your application has been crashing?
 
 **Hint**: read about [Disposability](https://12factor.net/disposability) in 12 factor apps and [Crash-only design](https://en.wikipedia.org/wiki/Crash-only_software)
+
+---
+
+# Workshop #4: Services
+
+---
+
+## Workshop #4 tasks for Managed Service:
+
+1. Deploy `attendee-service` from `workshop-material/demo-apps/attendee-service` directory. Make sure it runs correctly, and try visiting its URL in browser.
+    **Hint**:
+    1. you can use command: `cf push attendee-service -p ./attendee-service-0.0.1-SNAPSHOT.jar -m 512M --random-route` to push your app
+    2. run `cf marketplace` to find what you can use for providing your application with a ***managed database sevice***.
+    3. Reference docs can be found [here](http://docs.pivotal.io/pivotalcf/1-10/devguide/services/managing-services.html)
+
+---
+
+## Workshop #4 tasks for User Provided Service Instance:
+
+1. Browse `articulate` application's "Services" page. There is no service currently bound. `articulate`'s default configuration for the `attendee-service` `uri` is http://localhost:8181/attendees. You should override this `uri` parameter to your `attendee-service` in the cloud.
+2. Create `attendee-service` as a "user provided service" and bind `articulate` to the `attendee-service` user provided service.
+    **Hint:** Reference docs can be found [here](http://docs.pivotal.io/pivotalcf/devguide/services/user-provided.html)
+3. Test the setup by going to `articulate`'s Services page and add some attendees.
+
+Reference: [articulate source code](https://github.com/pivotal-education/pcf-articulate-code), [attendee-service source code](https://github.com/pivotal-education/pcf-attendee-service-code/)
+
+---
+
+## Workshop #4 questions:
+
+1. How does `attendee-service` find its database credentials and connect to the database?
+    **Hint**:
+    1. 12 factor apps have sections on [backing services](http://12factor.net/backing-services) and [configuration](http://12factor.net/config).
+    2. Run `cf env attendee-service` and read about [VCAP_SERVICES](https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)
+    3. Different languages/frameworks will have various ways to read environment variables. `attendee-service` takes advantage of a [Java Buildpack](https://github.com/cloudfoundry/java-buildpack) feature called [Auto-Reconfiguration](https://github.com/cloudfoundry/java-buildpack-auto-reconfiguration) that will automatically re-write bean definitions to connect with services bound to an application.
+2. Why could we *restart* `attendee-service` instead of *restage* it?
+
+---
+
+# Workshop #5: Application Security Groups
+
+---
+
+## Workshop #5 tasks:
+
+1. List the security groups in your environment.
+    **Hint**: Reference doc [here](https://docs.cloudfoundry.org/concepts/asg.html)
+2. View the rules detail of `public_networks`, `dns` and `p-mysql` ASGs.
+
+---
+
+## Workshop #5 questions:
+
+1. Is ASG rule a whitelist or blacklist?
+2. How could security groups affect the staging and running of your application?
+
+
+
+
+
+
+
+
+

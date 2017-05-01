@@ -125,3 +125,36 @@ Pivotal Web Services is a Pivotal's hosted Cloudfoundry for people and companies
 
 ## 4 levels of HA in CF
 
+---
+
+# Services
+
+---
+
+## 12-factor app: Store config in the environment.
+
+http://12factor.net/config
+
+---
+
+## 12-factor app: Treat backing services as attached resources.
+
+http://12factor.net/backing-services
+
+---
+
+# Workshop #4: services
+
+---
+
+## Managed Service & User provided service instance
+
+---
+
+## Service instance lifecycle
+
+- Create
+- bind
+- unbind
+- delete
+

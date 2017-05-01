@@ -89,3 +89,36 @@
 5. `Refresh` the page to see if app is back up.
 6. `cf events articulate` to see which app instance was killed.
 7. `cf scale articulate -i 1` to scale app back to original settings.
+
+---
+
+## Workshop #4 main steps for managed service:
+
+1. 
+    ```sh
+    $ cd workshop-material/demo-apps/attendee-service
+    $ cf push attendee-service -p ./attendee-service-0.0.1-SNAPSHOT.jar -m 512M --random-route
+    ```
+2. 
+    ```sh
+    $ cf marketplace
+    $ cf create-service cleardb spark attendee-mysql
+    $ cf bind-service attendee-service attendee-mysql
+    $ cf restart attendee-service
+    ```
+3. View the `attendee-service` in a browser.
+
+---
+
+## Workshop #4 main steps for user provided service instance
+
+1. `articulate`'s default configuration for the `attendee-service` `uri` is http://localhost:8181/attendees. The subsequent steps will allow you to override the default configuration with your own.
+2. `cf create-user-provided-service attendee-service -p uri`
+    **Note**: The CLI will ask you interactively for "uri" parameter, you should answer like "https://attendee-service-XXX-XXX.cfapps.io/attendees"
+3. Execute the following commands:
+    ```sh
+    $ cf bind-service articulate attendee-service
+    $ cf restart articulate
+    $ cf env articulate  # To review the environment
+    ```
+4. Navigate to `articulate`'s "Services" page and try to add some attendees.
