@@ -133,7 +133,8 @@ You can also run `cf apps` to see all your apps in your targeted space.
     **Hint**:
     1. you can use command: `cf push attendee-service -p ./attendee-service-0.0.1-SNAPSHOT.jar -m 512M --random-route` to push your app
     2. run `cf marketplace` to find what you can use for providing your application with a ***managed database sevice***.
-    3. Reference docs can be found [here](http://docs.pivotal.io/pivotalcf/1-10/devguide/services/managing-services.html)
+    3. Doc on CF Services can be found [here](http://docs.pivotal.io/pivotalcf/1-10/devguide/services/managing-services.html)
+    4. This attendee-service app uses **[Spring cloud connector](http://cloud.spring.io/spring-cloud-connectors/)** to connect to its database. More doc [here](https://docs.cloudfoundry.org/buildpacks/java/gsg-spring.html).
 
 ---
 

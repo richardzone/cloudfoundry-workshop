@@ -106,14 +106,6 @@ I want to use [Rancher](http://rancher.com/)!
 
 ---
 
-
-
-
-
-
-
----
-
 # Manifest & Logging
 
 ---
@@ -130,7 +122,12 @@ I want to use [Rancher](http://rancher.com/)!
 
 ## 4 levels of HA in CF
 
-- 
+- Availability Zones
+- Health Management for App Instances
+- Process Monitoring
+- Resurrection for VMs
+
+Ref: https://docs.cloudfoundry.org/concepts/high-availability.html#health-management-apps
 
 ---
 
