@@ -63,34 +63,58 @@ I want to use [Rancher](http://rancher.com/)!
 # Introduction to CloudFoundry
 
 ---
-## The Industry-Standard Cloud Platform
-![cloud platform](https://docs.pivotal.io/pivotalcf/1-10/concepts/images/power-of-platform.png "industry standard platforms")
 
-Cloud platforms represent the next step in the evolution of IT, enabling you to focus exclusively on your applications and data without worrying about underlying infrastructure.
+## Why PaaS
+
+![cloud platform](https://stack247.files.wordpress.com/2015/05/azure-on-premises-vs-iaas-vs-paas-vs-saas.png)
+
+---
+
+## Why Cloud Foundry
+
+- Open source
+- Stable & Robust
+- Large user group/community
+- Both old & modern
 
 ---
 ## Difference between CF, PCF and PWS
 
-### CF: Cloud Foundary
+### CF: Cloud Foundary - open source project
 
-### PCF: Pivotal Cloud Foundary
+### PCF: Pivotal Cloud Foundary = CF + proprietary add-ons
 
-### PWS: Pivotal Web Service
+### PWS: Pivotal Web Service - a public PaaS powered by PCF
 ---
 
-## How PCF Differs from CF
+## How PCF differs from CF
 ![difference](https://docs.pivotal.io/pivotalcf/1-10/customizing/images/pcf-commercialization.png "PCF VS CF")
 
 ---
 
-## Cloud Foundry Facts
+## What happened after `cf push`
 
-- Initial release: 2011
-- 
+![](https://docs.cloudfoundry.org/concepts/images/app_push_flow_diagram_diego.png)
 
 ---
 
 ## Cloud Foundry Architecture
+
+---
+
+![Cloud Foundry architecture](https://docs.pivotal.io/pivotalcf/1-7/concepts/images/diego/diego-flow.png)
+
+---
+
+
+
+
+
+
+
+---
+
+# Manifest & Logging
 
 ---
 
@@ -100,7 +124,13 @@ Cloud platforms represent the next step in the evolution of IT, enabling you to 
 
 # Cloud Foundry's HA architecture
 
+---
+
+
+
 ## 4 levels of HA in CF
+
+- 
 
 ---
 

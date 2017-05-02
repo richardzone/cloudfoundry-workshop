@@ -122,3 +122,43 @@
     $ cf env articulate  # To review the environment
     ```
 4. Navigate to `articulate`'s "Services" page and try to add some attendees.
+
+---
+
+## Workshop #5 main steps (20 mins):
+
+1. Browse to the `articulate` `Blue-Green` page. And generate some requests by pressing the `Start` button. Don't close this page yet.
+    Observe our current version (v1) handle all web requests.
+2. Run `cf routes` and take note of the current `host` of `articulate`.
+3. `cf push articulate-v2 -p ./articulate-0.0.1-SNAPSHOT.jar -m 512M -n articulate-prodtest`
+4. `cf bind-service articulate-v2 attendee-service`
+5. `cf restart articulate-v2`
+6. Open a new tab and view version 2 of `articulate` in your browser. Take note of the application name. You can do further testing on this environment.
+
+---
+
+## Workshop #5 main steps (cont.):
+
+7. When we're ready to release this version, run `$ cf map-route articulate-v2 cfapps.io -n articulate-XXX` where `articulate-XXX` is version 1's hostname.
+8. Return to the original browser tab of Blue-Green` page where you're generating requests. You should see that it is starting to send requests to version 2.
+9. Press the `Reset` button on the page, so we can see how the load get distributed across app instances. Run `cf apps` to see how many instances of each app version.
+
+---
+
+## Workshop #5 main steps (cont.):
+
+10. Move more traffic to version 2.
+    ```sh
+    $ cf scale articulate -i 1
+    $ cf scale articulate-v2 -i 2
+    ```
+11. Move all traffic to version 2 by running `$ cf unmap-route articulate cfapps.io -n articulate-version1-route`
+    If you `Reset` the requests generator, you will see all the traffic goes to `articulate-v2`.
+12. Remove the temp route from the articulate-v2 application: `$ cf unmap-route articulate-v2 cfapps.io -n articulate-prodtest`
+13. Clean up:
+    ```sh
+    $ cf delete articulate
+    $ cf rename articulate-v2 articulate
+    $ cf restart articulate
+    $ cf scale articulate -i 1
+    ```
