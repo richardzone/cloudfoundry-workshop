@@ -3,7 +3,7 @@
 
 ---
 
-## Workshop #1 reference steps:
+## Workshop #1 reference steps (20 mins):
 
 1. Login from CLI: `cf login -a api.run.pivotal.io`
 2. `cd workshop-material/demo-apps/node`
@@ -14,7 +14,7 @@
 
 ---
 
-## Workshop #2 reference steps:
+## Workshop #2 reference steps (10 mins):
 
 1. `cd workshop-material/demo-apps/articulate`
 2. Write a [manifest](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) file `manifest.yml` with the following content, be aware that **indention matters** with [YAML syntax](http://docs.ansible.com/ansible/YAMLSyntax.html) :
@@ -32,7 +32,7 @@
 
 ---
 
-## Workshop #2 main steps (cont.):
+## Workshop #2 main steps (cont.) (5 mins):
 
 1. Open your browser and view the application. Observe the log output, then refresh the page and you can see more logs are added.
 2. Stop tailing logs by pressing `Control+C`
@@ -41,7 +41,7 @@
 
 ---
 
-## Workshop #3 main steps for Vertically Scale:
+## Workshop #3 main steps for Vertically Scale (10 mins):
 
 1. Start tailing the `articulate` app log again:
     ```sh
@@ -60,7 +60,7 @@
     
 ---
 
-## Workshop #3 main steps for Horizontally Scale:
+## Workshop #3 main steps for Horizontally Scale (10 mins):
 
 1. Browse to the `Scale and HA` page of the `articulate` application. Review the `Application Environment Information`.
 2. Press the `Refresh` button multiple times. All requests are going to one application instance.
@@ -77,7 +77,7 @@
 
 ---
 
-## Workshop #3 main steps for HA:
+## Workshop #3 main steps for HA (5 mins):
 
 1. At this time you should be running multiple instances of `articulate`. Confirm this with the following command:
     ```
@@ -92,7 +92,7 @@
 
 ---
 
-## Workshop #4 main steps for managed service:
+## Workshop #4 main steps for managed service (15 mins):
 
 1. 
     ```sh
@@ -110,7 +110,7 @@
 
 ---
 
-## Workshop #4 main steps for user provided service instance
+## Workshop #4 main steps for user provided service instance (10 mins):
 
 1. `articulate`'s default configuration for the `attendee-service` `uri` is http://localhost:8181/attendees. The subsequent steps will allow you to override the default configuration with your own.
 2. `cf create-user-provided-service attendee-service -p uri`

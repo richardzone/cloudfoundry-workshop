@@ -159,11 +159,36 @@ Reference: [articulate source code](https://github.com/pivotal-education/pcf-art
 
 ---
 
-# Workshop #5: Application Security Groups
+# Workshop #5: Blue-Green Deployment
 
 ---
 
 ## Workshop #5 tasks:
+
+1. Follow the reference doc and do blue-green deployment on `articulate` app.
+    **Hint**:
+    1. Reference doc [here](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html)
+    2. You need to push 2 apps, one for current version and one for next-release version.
+    3. Use `cf map-route` and `cf unmap-route` commands to manage the traffic  to these apps.
+    4. Go to `articulate`'s `Blue-Green` page, hit start to see how requests go to each app based on route mappings.
+
+---
+
+## Workshop #5 questions:
+
+1. Why do we want to do Blue-green deployments?
+2. If the new version of application has bug, how do we do a rollback?
+3. When you design an app to be blue-green deployed, are there any design constraints?
+2. Is there any way for blue-green deployment to be automated?
+
+
+---
+
+# Workshop #6: Application Security Groups
+
+---
+
+## Workshop #6 tasks:
 
 1. List the security groups in your environment.
     **Hint**: Reference doc [here](https://docs.cloudfoundry.org/concepts/asg.html)
@@ -171,10 +196,11 @@ Reference: [articulate source code](https://github.com/pivotal-education/pcf-art
 
 ---
 
-## Workshop #5 questions:
+## Workshop #6 questions:
 
 1. Is ASG rule a whitelist or blacklist?
-2. How could security groups affect the staging and running of your application?
+2. Run `cf help -a` and explain all the security-group related commands.
+3. What are the differences between staging-security-groups and running-security-groups?
 
 
 
